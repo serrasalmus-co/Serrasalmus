@@ -1,0 +1,6 @@
+{
+  "name": "Serrasalmus",
+  "description": "Consulting & Commodity International Broker with an interactive bioluminescent 3D particle fish canvas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

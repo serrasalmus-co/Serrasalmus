@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #050505;
+  --text-main: #ffffff;
+  --text-muted: #a3a3a3;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --brand-orange: #ff5b24;
+  --accent-glow: rgba(255, 91, 36, 0.4);
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 70% 50%, #1c0b06 0%, #050505 70%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Canvas Container for 3D Fish */
+#canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* HUD Outer Frame Overlay */
+.hud-border {
+  position: fixed;
+  inset: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* Typography styles */
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 11vw, 13rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--brand-orange);
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 0 50px rgba(255, 91, 36, 0.35);
+}
+
+.hero-subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(0.75rem, 1.3vw, 1.2rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.display-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.label-mono, .mono-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* Glassmorphism Sections & UI Panels */
+.glass-section {
+  background-color: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 91, 36, 0.15);
+}
+
+.ui-panel {
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.borde-limpio {
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  z-index: 20;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+}
+
+.progress-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  margin-top: 8px;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--brand-orange);
+  box-shadow: 0 0 10px var(--brand-orange);
+}
+
+.producto-row {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.producto-row:hover {
+  background-color: rgba(255, 91, 36, 0.07);
+  padding-left: 1.5rem;
+}
+.producto-row:hover .arrow-icon {
+  transform: rotate(-45deg) scale(1.15);
+  color: var(--brand-orange);
+}
+
+/* Custom Input Styling */
+input:focus, textarea:focus {
+  border-color: #ff5b24 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 20px -2px rgba(255, 91, 36, 0.2);
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Glow Effects */
+.glow-orange {
+  box-shadow: 0 0 30px rgba(255, 91, 36, 0.35);
+}
+
+/* Hide scrollbar for clean UI */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff5b24;
+}
+
+
