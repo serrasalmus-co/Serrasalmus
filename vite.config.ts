@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/Serrasalmus/', // <--- Obligatorio para que GitHub Pages encuentre los assets en la subruta
+    base: '/', 
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
